@@ -34,6 +34,18 @@ namespace HospitalManagement
                        };
 
             this.gridDoctors.ItemsSource = docs.ToList();
+
+            var patient = from d in db.Patient
+                       select new
+                       {
+                           Name = d.FirstName,
+                           Surname = d.SecondName,
+                           PhoneNumber = d.PhoneNumber,
+                           Address = d.Address,
+                           Age = d.Age
+                       };
+
+            this.PatientGrid.ItemsSource = patient.ToList();
         }
 
         // Add - do the insertion operation
@@ -133,6 +145,105 @@ namespace HospitalManagement
                 {
                     db.Doctor.Remove(obj);
                     db.SaveChanges();
+                }
+            }
+        }
+
+        // Add Patient - do the insertion operation
+        private void btnAddPatient_Click(object sender, RoutedEventArgs e)
+        {
+            HospitalManagementDBEntities db = new HospitalManagementDBEntities();
+
+            Patient patientObject = new Patient()
+            {
+                FirstName = txtPatientName.Text,
+                SecondName = txtPatientSurname.Text,
+                PhoneNumber = txtPatientPhone.Text,
+                Address = txtPatientAddress.Text,
+                Age = int.Parse(txtPatientAge.Text)
+            };
+
+            db.Patient.Add(patientObject);
+            db.SaveChanges();
+        }
+
+        // Load, refresh the database
+        private void btnLoadPatient_Click(object sender, RoutedEventArgs e)
+        {
+            HospitalManagementDBEntities db = new HospitalManagementDBEntities();
+
+            this.PatientGrid.ItemsSource = db.Patient .ToList();
+        }
+
+        private void btnUpdatePatient_Click(object sender, RoutedEventArgs e)
+        {
+            HospitalManagementDBEntities db = new HospitalManagementDBEntities();
+
+            var r = from d in db.Patient
+                    where d.Id == this.updatingPatientId
+                    select d;
+
+            Patient obj = r.SingleOrDefault();
+
+            if (obj != null)
+            {
+                obj.FirstName = this.txtPatientName2.Text;
+                obj.SecondName = this.txtPatientSurname2.Text;
+                obj.PhoneNumber = this.txtPatientPhone2.Text;
+                obj.Address = this.txtPatientAddress2.Text;
+                obj.Age = int.Parse(this.txtPatientAge2.Text);
+
+                db.SaveChanges();
+            }
+        }
+
+        private void btnDeletePatient_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult msgBoxResult = MessageBox.Show("Are you sure you want to delete?",
+                "Delete Patient",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning,
+                MessageBoxResult.No
+            );
+
+            if (msgBoxResult == MessageBoxResult.Yes)
+            {
+                HospitalManagementDBEntities db = new HospitalManagementDBEntities();
+
+                var r = from d in db.Patient
+                        where d.Id == this.updatingPatientId
+                        select d;
+
+                Patient obj = r.SingleOrDefault();
+
+                if (obj != null)
+                {
+                    db.Patient.Remove(obj);
+                    db.SaveChanges();
+                }
+            }
+
+        }
+
+        private int updatingPatientId = 0;
+        private void PatientGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.PatientGrid.SelectedIndex >= 0)
+            {
+                if (this.PatientGrid.SelectedItems.Count >= 0)
+                {
+                    if (this.PatientGrid.SelectedItems[0].GetType() == typeof(Patient))
+                    {
+                        Patient d = (Patient)this.PatientGrid.SelectedItems[0];
+
+                        this.txtPatientName2.Text = d.FirstName;
+                        this.txtPatientSurname2.Text = d.SecondName;
+                        this.txtPatientPhone2.Text = d.PhoneNumber;
+                        this.txtPatientAddress2.Text = d.Address;
+                        this.txtPatientAge2.Text = d.Age.ToString();
+
+                        this.updatingPatientId = d.Id;
+                    }
                 }
             }
         }

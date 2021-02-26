@@ -5,28 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalManagement"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Doctors and Patients" Height="450" Width="950">
     <Grid>
-        <DataGrid x:Name="gridDoctors" HorizontalAlignment="Left" Height="111" Margin="0,299,0,0" VerticalAlignment="Top" Width="784" SelectionChanged="gridDoctors_SelectionChanged"/>
-        <Label Content="Name:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="95,18,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Specialization:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtSpecialization" HorizontalAlignment="Left" Height="23" Margin="95,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Qualification:" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtQualification" HorizontalAlignment="Left" Height="23" Margin="95,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="140,137,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
-        <Button x:Name="btnLoadDoctors" Content="Load" HorizontalAlignment="Left" Margin="20,275,0,0" VerticalAlignment="Top" Width="75" Click="btnLoadDoctors_Click"/>
-        <Button x:Name="btnUpdateDoctor" Content="Update" HorizontalAlignment="Left" Margin="484,274,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdateDoctor_Click"/>
-        <Label Content="Name:" HorizontalAlignment="Left" Margin="354,158,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtName2" HorizontalAlignment="Left" Height="22" Margin="439,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Specialization:" HorizontalAlignment="Left" Margin="354,186,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtSpecialization2" HorizontalAlignment="Left" Height="22" Margin="439,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Qualification:" HorizontalAlignment="Left" Margin="354,214,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtQualification2" HorizontalAlignment="Left" Height="22" Margin="439,214,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.955"/>
-        <Button x:Name="btnDeleteDoctor" Content="Delete" HorizontalAlignment="Left" Margin="248,274,0,0" VerticalAlignment="Top" Width="76" Click="btnDeleteDoctor_Click"/>
-        <Label Content="Age:" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="95,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Age:" HorizontalAlignment="Left" Margin="354,241,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtAge2" HorizontalAlignment="Left" Height="22" Margin="439,241,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.955"/>
+
+        <!--Doctor-->
+        <DataGrid x:Name="gridDoctors" HorizontalAlignment="Left" Height="166" Margin="10,236,0,0" VerticalAlignment="Top" Width="452" SelectionChanged="gridDoctors_SelectionChanged"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="20,38,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="105,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Specialization:" HorizontalAlignment="Left" Margin="20,66,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSpecialization" HorizontalAlignment="Left" Height="23" Margin="105,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Qualification:" HorizontalAlignment="Left" Margin="20,94,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtQualification" HorizontalAlignment="Left" Height="23" Margin="105,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="150,157,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+        <Button x:Name="btnLoadDoctors" Content="Load Doctor" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="75" Click="btnLoadDoctors_Click"/>
+        <Button x:Name="btnUpdateDoctor" Content="Update" HorizontalAlignment="Left" Margin="364,155,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdateDoctor_Click"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="234,39,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName2" HorizontalAlignment="Left" Height="22" Margin="320,39,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Specialization:" HorizontalAlignment="Left" Margin="234,67,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSpecialization2" HorizontalAlignment="Left" Height="22" Margin="320,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Qualification:" HorizontalAlignment="Left" Margin="234,95,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtQualification2" HorizontalAlignment="Left" Height="22" Margin="320,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.955"/>
+        <Button x:Name="btnDeleteDoctor" Content="Delete Doctor" HorizontalAlignment="Left" Margin="90,212,0,0" VerticalAlignment="Top" Width="94" Click="btnDeleteDoctor_Click"/>
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="20,122,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="105,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="234,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.595,0.578"/>
+        <TextBox x:Name="txtAge2" HorizontalAlignment="Left" Height="22" Margin="320,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.955"/>
+        <GroupBox Header="Doctor" HorizontalAlignment="Left" Height="174" VerticalAlignment="Top" Width="452" Margin="10,10,0,0"/>
+
+        <!--Patient-->
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="480,38,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPatientName" HorizontalAlignment="Left" Height="23" Margin="565,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Surname:" HorizontalAlignment="Left" Margin="480,66,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPatientSurname" HorizontalAlignment="Left" Height="23" Margin="565,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Phone:" HorizontalAlignment="Left" Margin="480,94,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPatientPhone" HorizontalAlignment="Left" Height="23" Margin="565,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAddPatient" Content="Add" HorizontalAlignment="Left" Margin="610,179,0,0" VerticalAlignment="Top" Width="75" Click="btnAddPatient_Click"/>
+        <Button x:Name="btnLoadPatient" Content="Load Patient" HorizontalAlignment="Left" Margin="480,212,0,0" VerticalAlignment="Top" Width="75" Click="btnLoadPatient_Click"/>
+        <Button x:Name="btnUpdatePatient" Content="Update" HorizontalAlignment="Left" Margin="825,179,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdatePatient_Click"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="694,39,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPatientName2" HorizontalAlignment="Left" Height="22" Margin="780,39,-106.4,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Surname:" HorizontalAlignment="Left" Margin="694,67,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPatientSurname2" HorizontalAlignment="Left" Height="22" Margin="780,67,-106.4,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Phone:" HorizontalAlignment="Left" Margin="694,95,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPatientPhone2" HorizontalAlignment="Left" Height="22" Margin="780,95,-106.4,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.955"/>
+        <Button x:Name="btnDeletePatient" Content="Delete Patient" HorizontalAlignment="Left" Margin="565,212,0,0" VerticalAlignment="Top" Width="94" Click="btnDeletePatient_Click"/>
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="480,122,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPatientAge" HorizontalAlignment="Left" Height="23" Margin="565,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.587,1.922"/>
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="694,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.595,0.578"/>
+        <TextBox x:Name="txtPatientAge2" HorizontalAlignment="Left" Height="22" Margin="780,122,-106.4,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.955"/>
+        <GroupBox Header="Patient" HorizontalAlignment="Left" Height="197" VerticalAlignment="Top" Width="463" Margin="471,10,0,0"/>
+        <DataGrid x:Name="PatientGrid" HorizontalAlignment="Left" Height="166" Margin="480,236,0,0" VerticalAlignment="Top" Width="454" SelectionChanged="PatientGrid_SelectionChanged"/>
+        <Label Content="Address:" HorizontalAlignment="Left" Margin="480,150,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPatientAddress" HorizontalAlignment="Left" Height="23" Margin="565,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.587,1.922"/>
+        <Label Content="Address:" HorizontalAlignment="Left" Margin="694,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.595,0.578"/>
+        <TextBox x:Name="txtPatientAddress2" HorizontalAlignment="Left" Height="22" Margin="780,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.955"/>
     </Grid>
 </Window>
