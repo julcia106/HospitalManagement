@@ -121,7 +121,7 @@ namespace HospitalManagement
 
         }
 
-        // Delete the record
+        // Delete the Doctor record
         private void btnDeleteDoctor_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult msgBoxResult = MessageBox.Show("Are you sure you want to delete?",
@@ -149,7 +149,10 @@ namespace HospitalManagement
             }
         }
 
-        // Add Patient - do the insertion operation
+        // Patient ///////////////////////////////////////////
+
+
+        // Add Patient to the database - do the insertion operation
         private void btnAddPatient_Click(object sender, RoutedEventArgs e)
         {
             HospitalManagementDBEntities db = new HospitalManagementDBEntities();
@@ -175,6 +178,8 @@ namespace HospitalManagement
             this.PatientGrid.ItemsSource = db.Patient .ToList();
         }
 
+        // Track the Patient id which I want to select and update
+        private int updatingPatientId = 0;
         private void btnUpdatePatient_Click(object sender, RoutedEventArgs e)
         {
             HospitalManagementDBEntities db = new HospitalManagementDBEntities();
@@ -197,6 +202,7 @@ namespace HospitalManagement
             }
         }
 
+        // Delete Patient record in database
         private void btnDeletePatient_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult msgBoxResult = MessageBox.Show("Are you sure you want to delete?",
@@ -225,7 +231,7 @@ namespace HospitalManagement
 
         }
 
-        private int updatingPatientId = 0;
+        // When record is selected - he will appear in update section
         private void PatientGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (this.PatientGrid.SelectedIndex >= 0)
@@ -247,5 +253,11 @@ namespace HospitalManagement
                 }
             }
         }
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            SubWindow subWindow = new SubWindow();
+            subWindow.Show();
+        }
+
     }
 }
