@@ -253,11 +253,19 @@ namespace HospitalManagement
                 }
             }
         }
+
+        // Button for more informations about patient
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             SubWindow subWindow = new SubWindow();
             subWindow.Show();
         }
 
+        // Button for more informations about Doctor(appointments)
+        private void Appointments_Click(object sender, RoutedEventArgs e)
+        {
+            AppointmentsWindow appointmentsWindow = new AppointmentsWindow();
+            appointmentsWindow.Show();
+        }
     }
 }
