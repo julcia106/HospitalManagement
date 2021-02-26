@@ -82,6 +82,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Appointment.cs">
+      <DependentUpon>HospitalManagementSystemModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppointmentsWindow.xaml.cs">
       <DependentUpon>AppointmentsWindow.xaml</DependentUpon>
     </Compile>

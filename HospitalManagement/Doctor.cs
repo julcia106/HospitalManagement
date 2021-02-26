@@ -12,34 +12,21 @@ namespace HospitalManagement
     using System;
     using System.Collections.Generic;
     
-    /// <summary>
-    /// Class <c>Doctor</c> holds basic informations about doctors.
-    /// </summary>
     public partial class Doctor
     {
-        /// <summary>
-        /// Doctor Id
-        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Doctor()
+        {
+            this.Appointment = new HashSet<Appointment>();
+        }
+    
         public int Id { get; set; }
-
-        /// <summary>
-        /// Doctor's name and surname
-        /// </summary>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Doctor's specialization
-        /// </summary>
         public string Specialization { get; set; }
-
-        /// <summary>
-        /// Doctor's qualification
-        /// </summary>
         public string Qualification { get; set; }
-
-        /// <summary>
-        /// Doctor's age
-        /// </summary>
         public Nullable<int> Age { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Appointment> Appointment { get; set; }
     }
 }

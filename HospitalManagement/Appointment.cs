@@ -12,12 +12,15 @@ namespace HospitalManagement
     using System;
     using System.Collections.Generic;
     
-    public partial class Diagnosis
+    public partial class Appointment
     {
         public int Id { get; set; }
-        public string DiseaseName { get; set; }
-        public string DiseaseCode { get; set; }
-        public Nullable<System.DateTime> DiagnosisDate { get; set; }
-        public string Medicines { get; set; }
+        public Nullable<int> DoctorID { get; set; }
+        public Nullable<int> PatientID { get; set; }
+        public Nullable<System.DateTime> AppointmentDate { get; set; }
+        public Nullable<System.DateTime> AppointmentTime { get; set; }
+    
+        public virtual Doctor Doctor { get; set; }
+        public virtual Patient Patient { get; set; }
     }
 }

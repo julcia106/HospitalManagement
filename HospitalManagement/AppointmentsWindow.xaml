@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalManagement"
         mc:Ignorable="d"
-        Title="AppointmentsWindow" Height="450" Width="800">
+        Title="Appointments" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid x:Name="gridAppointments" HorizontalAlignment="Left" Height="234" Margin="10,140,0,0" VerticalAlignment="Top" Width="774"/>
+        <Label Content="Appointments" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,76,0,0" Height="31" Width="286" FontFamily="Arial Black" FontSize="16"/>
     </Grid>
 </Window>

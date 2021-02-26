@@ -28,5 +28,6 @@ namespace HospitalManagement
         public virtual DbSet<Doctor> Doctor { get; set; }
         public virtual DbSet<Patient> Patient { get; set; }
         public virtual DbSet<Diagnosis> Diagnosis { get; set; }
+        public virtual DbSet<Appointment> Appointment { get; set; }
     }
 }

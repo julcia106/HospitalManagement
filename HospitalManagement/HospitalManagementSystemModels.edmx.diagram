@@ -8,6 +8,9 @@
         <EntityTypeShape EntityType="HospitalManagementDBModel.Doctor" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HospitalManagementDBModel.Patient" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HospitalManagementDBModel.Diagnosis" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HospitalManagementDBModel.Appointment" Width="1.5" PointX="5" PointY="0.75" />
+        <AssociationConnector Association="HospitalManagementDBModel.FK_Table_Doctor" />
+        <AssociationConnector Association="HospitalManagementDBModel.FK_Table_Patient" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
