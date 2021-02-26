@@ -37,5 +37,29 @@ namespace HospitalManagement
 
             this.gridDiagnosis.ItemsSource = diagnosis.ToList();
         }
+
+        private void btnLoadHistory_Click(object sender, RoutedEventArgs e)
+        {
+            HospitalManagementDBEntities db = new HospitalManagementDBEntities();
+
+            this.gridDiagnosis.ItemsSource = db.Diagnosis.ToList();
+        }
+
+        // Add a new diagnosed disease
+        private void btnAddDisease_Click(object sender, RoutedEventArgs e)
+        {
+            HospitalManagementDBEntities db = new HospitalManagementDBEntities();
+
+            Diagnosis diagnosis = new Diagnosis()
+            {
+                DiseaseName = txtNameDisease.Text,
+                DiseaseCode = txtCodeDisease.Text,
+                DiagnosisDate = DateTime.Parse(txtDiagnosisDate.Text),
+                Medicines = txtMedicines.Text
+            };
+
+            db.Diagnosis.Add(diagnosis);
+            db.SaveChanges();
+        }
     }
 }
