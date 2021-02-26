@@ -12,12 +12,34 @@ namespace HospitalManagement
     using System;
     using System.Collections.Generic;
     
+    /// <summary>
+    /// Class <c>Doctor</c> holds basic informations about doctors.
+    /// </summary>
     public partial class Doctor
     {
+        /// <summary>
+        /// Doctor Id
+        /// </summary>
         public int Id { get; set; }
+
+        /// <summary>
+        /// Doctor's name and surname
+        /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Doctor's specialization
+        /// </summary>
         public string Specialization { get; set; }
+
+        /// <summary>
+        /// Doctor's qualification
+        /// </summary>
         public string Qualification { get; set; }
+
+        /// <summary>
+        /// Doctor's age
+        /// </summary>
         public Nullable<int> Age { get; set; }
     }
 }

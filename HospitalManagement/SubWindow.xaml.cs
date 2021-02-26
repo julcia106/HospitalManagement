@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace HospitalManagement
 {
     /// <summary>
-    /// Interaction logic for SubWindow.xaml
+    /// Interaction logic for SubWindow.xaml which describes patient's medical history.
     /// </summary>
     public partial class SubWindow : Window
     {

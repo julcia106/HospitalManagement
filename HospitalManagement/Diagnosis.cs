@@ -12,12 +12,34 @@ namespace HospitalManagement
     using System;
     using System.Collections.Generic;
     
+    /// <summary>
+    /// Class <c>Diagnosis</c> holds informations about Patient's medical history.
+    /// </summary>
     public partial class Diagnosis
     {
+        /// <summary>
+        /// Id of the patient
+        /// </summary>
         public int Id { get; set; }
+
+        /// <summary>
+        /// Disease name and description.
+        /// </summary>
         public string DiseaseName { get; set; }
+
+        /// <summary>
+        /// Disease code.
+        /// </summary>
         public string DiseaseCode { get; set; }
+
+        /// <summary>
+        /// Date of diagnosis.
+        /// </summary>
         public Nullable<System.DateTime> DiagnosisDate { get; set; }
+
+        /// <summary>
+        /// Medications the patient was taking.
+        /// </summary>
         public string Medicines { get; set; }
     }
 }

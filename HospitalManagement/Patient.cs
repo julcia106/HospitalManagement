@@ -11,14 +11,40 @@ namespace HospitalManagement
 {
     using System;
     using System.Collections.Generic;
-    
+   
+    ///<summary>
+    /// Class <c>Patient</c> holds basic informations about Patient.
+    /// </summary>
     public partial class Patient
     {
+        /// <summary>
+        /// Id property.
+        /// </summary>
         public int Id { get; set; }
+
+        /// <summary>
+        /// First name property.
+        /// </summary>
         public string FirstName { get; set; }
+
+        /// <summary>
+        /// Second name property.
+        /// </summary>
         public string SecondName { get; set; }
+
+        /// <summary>
+        /// Phone number property.
+        /// </summary>
         public string PhoneNumber { get; set; }
+
+        /// <summary>
+        /// Address property
+        /// </summary>
         public string Address { get; set; }
+
+        /// <summary>
+        /// Age property
+        /// </summary>
         public Nullable<int> Age { get; set; }
     }
 }
